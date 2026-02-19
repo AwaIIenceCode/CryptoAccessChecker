@@ -100,12 +100,6 @@ function checkUserDeposit(userDeposit, minDeposit)
     return userDeposit >= minDeposit;
 }
 
-// fun for check user KYC
-function checkKYC()
-{
-    if (userKYS === true) { return userKYS; }
-}
-
 // fun for buy crypto 
 function buyCrypto()
 {}
@@ -151,21 +145,21 @@ function main()
 
     const cryptoActions = 
     {
-        1: { name: "Use crypto-exchange", minAgeExchange: 18 },
-        2: { name: "Buy Crypto", minAgeOperation: 18 },
-        3: { name: "Sell Crypto", minAgeOperation: 18 },
-        4: { name: "Futures Trading", minAgeTrades: 21 }
+        1: { name: "Use crypto-exchange", minAge: 18, minDeposit: 0 },
+        2: { name: "Buy Crypto", minAge: 18, minDeposit: 100 },
+        3: { name: "Sell Crypto", minAge: 18, minDeposit: 50 },
+        4: { name: "Futures Trading", minAge: 21, minDeposit: 500 }
     };
 
-    let userChoise;
+    let userChoice;
 
     while (true)
     {
         console.log("\n Press \"1\" for use crypto-exchange Press \"2\" for buy crypto\nPress \"3\" for sell crypto\nPress \"4\" for futures trades\nPress \"5\" for exit");
 
-        userChoise = Number(prompt("\nEnter your choise -> "));
+        userChoice = Number(prompt("\nEnter your choice -> "));
 
-        switch(userChoise)
+        switch(userChoice)
         {
             case 1:
                 {
