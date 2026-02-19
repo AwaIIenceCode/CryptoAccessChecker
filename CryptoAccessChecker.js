@@ -24,7 +24,7 @@ function enterUserDeposit()
     {
         userDeposit = Number(prompt("\nEnter your sum deposit -> "));
 
-        if (isNaN(userDeposit) || userDeposit < 0) { console.log("Sum your deposit can`t be above zero, try again!"); continue; }
+        if (isNaN(userDeposit) || userDeposit < 0) { console.log("Sum your deposit can`t be less zero, try again!"); continue; }
     
         else { return userDeposit; }
     }
@@ -37,9 +37,9 @@ function enterVerificationUserKYC()
 
     console.log("\nWelcome the verification page, write your adress, name and surname, please");
 
-    enterVerificationName();
-    enterVerificationSurname();
-    enterVerificationAdress();
+    const userName = enterVerificationName();
+    const userSurname = enterVerificationSurname();
+    const userAdress = enterVerificationAdress();
 
     return userKYS = true;
 }
