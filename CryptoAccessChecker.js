@@ -160,7 +160,7 @@ function main()
 
     while (true)
     {
-        console.log("Press \"1\" for buy crypto\nPress \"2\" for sell crypto\nPress \"3\" for futures trades\nPress \"4\" for exit b");
+        console.log("\n Press \"1\" for use crypto-exchange Press \"2\" for buy crypto\nPress \"3\" for sell crypto\nPress \"4\" for futures trades\nPress \"5\" for exit");
 
         userChoise = Number(prompt("\nEnter your choise -> "));
 
@@ -168,28 +168,34 @@ function main()
         {
             case 1:
                 {
-                    runCryptoAction("buy crypto");
-                    break;  
+                    const action = cryptoActions[userChoice];
+                    runCryptoAction(action);
+  
                 }
             
             case 2:
                 {
-                    runCryptoAction("sell crypto");
-                    break; 
+                    const action = cryptoActions[userChoice];
+                    runCryptoAction(action);                                         
                 }
 
             case 3:
                 {
-                    runCryptoAction("trade futures");
-                    break; 
+                    const action = cryptoActions[userChoice];
+                    runCryptoAction(action);
                 }
                
             case 4:
                 {
-                    runCryptoAction("Goodbye");
-                    break; 
+                    const action = cryptoActions[userChoice];
+                    runCryptoAction(action);                     
                 }
 
+                case 5: 
+                {
+                    console.log("Exit the program...");
+                    return;
+                }
             default:
                 break;
         }
