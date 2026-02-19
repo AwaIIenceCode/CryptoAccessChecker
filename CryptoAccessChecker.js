@@ -171,25 +171,28 @@ function main()
                 {
                     const action = cryptoActions[userChoice];
                     runCryptoAction(action);
-  
+                    break;
                 }
             
             case 2:
                 {
                     const action = cryptoActions[userChoice];
                     runCryptoAction(action);                                         
+                    break;
                 }
 
             case 3:
                 {
                     const action = cryptoActions[userChoice];
                     runCryptoAction(action);
+                    break;
                 }
                
             case 4:
                 {
                     const action = cryptoActions[userChoice];
                     runCryptoAction(action);                     
+                    break;
                 }
 
                 case 5: 
