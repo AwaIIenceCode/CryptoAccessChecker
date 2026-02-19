@@ -145,10 +145,10 @@ function main()
 
     const cryptoActions = 
     {
-        1: { name: "Use crypto-exchange", minAge: 18, minDeposit: 0 },
-        2: { name: "Buy Crypto", minAge: 18, minDeposit: 100 },
-        3: { name: "Sell Crypto", minAge: 18, minDeposit: 50 },
-        4: { name: "Futures Trading", minAge: 21, minDeposit: 500 }
+        1: { name: "Use crypto-exchange", minAge: 18, minDeposit: 0, handler: enterVerificationUserKYC },
+        2: { name: "Buy Crypto", minAge: 18, minDeposit: 100, handler: buyCrypto },
+        3: { name: "Sell Crypto", minAge: 18, minDeposit: 50, handler: sellCrypto },
+        4: { name: "Futures Trading", minAge: 21, minDeposit: 500, handler: tradesFuturesCrypto }
     };
 
     let userChoice;
