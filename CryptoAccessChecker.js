@@ -1,4 +1,4 @@
-const prompt = require("prompt-sync");
+const prompt = require("prompt-sync")();
 
 // fun for enter user age
 function enterUserAge()
