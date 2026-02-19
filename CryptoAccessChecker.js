@@ -123,7 +123,7 @@ function runCryptoAction(action)
 {
     const age = enterUserAge();
     const deposit = enterUserDeposit();
-    const verification = enterVerificationUserKYC();
+    const isVerified = enterVerificationUserKYC();
 
     if (!checkUserAge(age, action.minAge))
     {
@@ -131,15 +131,16 @@ function runCryptoAction(action)
         return;
     }
 
-    if (!checkUserDeposit(deposit, action.minDeposit))
+    if (!checkUserDeposit(deposit, action.minDeposit)) 
     {
-        console.log("Your deposit must be positive for trades!");
+        console.log(`Minimum deposit is ${action.minDeposit}`);
         return;
     }
 
-    if (!checkKYC(verification, action.minAgeExchange))
-    {
-        console.log("Your acc must be verification!");
+    if (!isVerified) 
+        {
+        console.log("KYC required.");
+        return
     }
 }
 
