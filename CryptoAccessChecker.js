@@ -31,7 +31,7 @@ function enterUserDeposit()
 }
 
 //fun for verification user
-function verificationUserKYC()
+function enterVerificationUserKYC()
 {
     let userKYS = false;
 
@@ -56,7 +56,6 @@ function enterVerificationName()
 
         else { return userName; }
     }
-
 }
 
 // fun for verification user surname
@@ -95,18 +94,67 @@ function checkUserAge(userAge, minAge)
     return userAge >= minAge;
 }
 
+// fun for check user deposit
+function checkUserDeposit()
+{
+    return userDeposit >= 0;
+}
+
 // fun for check user KYC
 function checkKYC()
+{
+    if (userKYS === true) { return userKYS; }
+}
+
+// fun for buy crypto 
+function buyCrypto()
+{}
+
+// fun for sell crypto 
+function sellCrypto()
+{}
+
+// fun for trades Futures crypto 
+function tradesFuturesCrypto()
 {}
 
 // for run 
-function runCryptoAction()
-{}
+function runCryptoAction(action)
+{
+    const age = enterUserAge();
+    const deposit = enterUserDeposit();
+    const verification = enterVerificationUserKYC();
+
+    if (!checkUserAge(age, action.minAge))
+    {
+        console.log(`Access denied. Minimum age is ${action.minAge}`);
+        return;
+    }
+
+    if (!checkUserDeposit)
+    {
+        console.log("Your deposit must be positive for trades!");
+        return;
+    }
+
+    if (!checkKYC)
+    {
+        console.log("Your acc must be verification!");
+    }
+}
 
 //the main method that delegates the entire program
 function main()
 {
     console.log("Welcome the acces checker in cryptocurrency");
+
+    const cryptoActions = 
+    {
+        1: { name: "Use crypto-exchange", minAge: 18 },
+        2: { name: "Buy Crypto", minAge: 18 },
+        3: { name: "Sell Crypto", minAge: 18 },
+        4: { name: "Futures Trading", minAge: 21 }
+    };
 
     let userChoise;
 
@@ -117,13 +165,29 @@ function main()
         switch(userChoise)
         {
             case 1:
-                break;
+                {
+                    runCryptoAction("buy crypto");
+                    break;  
+                }
+            
             case 2:
-                break;
+                {
+                    runCryptoAction("sell crypto");
+                    break; 
+                }
+
             case 3:
-                break;
+                {
+                    runCryptoAction("trade futures");
+                    break; 
+                }
+               
             case 4:
-                return;
+                {
+                    runCryptoAction("Goodbye");
+                    break; 
+                }
+
             default:
                 break;
         }
