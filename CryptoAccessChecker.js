@@ -95,9 +95,9 @@ function checkUserAge(userAge, minAge)
 }
 
 // fun for check user deposit
-function checkUserDeposit()
+function checkUserDeposit(userDeposit, minDeposit)
 {
-    return userDeposit >= 0;
+    return userDeposit >= minDeposit;
 }
 
 // fun for check user KYC
