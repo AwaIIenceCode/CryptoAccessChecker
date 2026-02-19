@@ -52,7 +52,7 @@ function enterVerificationName()
     {
         userName = String(prompt("\nEnter your name -> ").toLowerCase());
 
-        if (userName === null) { console.log("Your name can`t be empty, try again!"); continue; }
+        if (!userName.trim()) { console.log("Your name can`t be empty, try again!"); continue; }
 
         else { return userName; }
     }
@@ -65,9 +65,9 @@ function enterVerificationSurname()
 
     while(true)
     {
-        userName = String(prompt("\nEnter your surname -> ").toLowerCase());
+        userSurname = String(prompt("\nEnter your surname -> ").toLowerCase());
 
-        if (userSurname === null) { console.log("Your surname can`t be empty, try again!"); continue; }
+        if (!userSurname.trim()) { console.log("Your surname can`t be empty, try again!"); continue; }
 
         else { return userSurname; }
     }
@@ -80,9 +80,9 @@ function enterVerificationAdress()
 
     while(true)
     {
-        userName = String(prompt("\nEnter your adress -> ").toLowerCase());
+        userAdress = String(prompt("\nEnter your adress -> ").toLowerCase());
 
-        if (userAdress === null) { console.log("Your adress can`t be empty, try again!"); continue; }
+        if (!userAdress.trim()) { console.log("Your adress can`t be empty, try again!"); continue; }
 
         else { return userAdress; }
     }
