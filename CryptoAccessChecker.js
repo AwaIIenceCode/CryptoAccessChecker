@@ -131,13 +131,13 @@ function runCryptoAction(action)
         return;
     }
 
-    if (!checkUserDeposit)
+    if (!checkUserDeposit(deposit, action.minDeposit))
     {
         console.log("Your deposit must be positive for trades!");
         return;
     }
 
-    if (!checkKYC)
+    if (!checkKYC(verification, action.minAgeExchange))
     {
         console.log("Your acc must be verification!");
     }
@@ -150,10 +150,10 @@ function main()
 
     const cryptoActions = 
     {
-        1: { name: "Use crypto-exchange", minAge: 18 },
-        2: { name: "Buy Crypto", minAge: 18 },
-        3: { name: "Sell Crypto", minAge: 18 },
-        4: { name: "Futures Trading", minAge: 21 }
+        1: { name: "Use crypto-exchange", minAgeExchange: 18 },
+        2: { name: "Buy Crypto", minAgeOperation: 18 },
+        3: { name: "Sell Crypto", minAgeOperation: 18 },
+        4: { name: "Futures Trading", minAgeTrades: 21 }
     };
 
     let userChoise;
@@ -161,6 +161,8 @@ function main()
     while (true)
     {
         console.log("Press \"1\" for buy crypto\nPress \"2\" for sell crypto\nPress \"3\" for futures trades\nPress \"4\" for exit b");
+
+        userChoise = Number(prompt("\nEnter your choise -> "));
 
         switch(userChoise)
         {
