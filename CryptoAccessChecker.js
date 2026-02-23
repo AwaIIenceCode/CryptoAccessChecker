@@ -14,7 +14,7 @@ function enterUserAge()
         else { return userAge; }
     }
 }
-
+ 
 // fun for enter user deposit
 function enterUserDeposit()
 {
@@ -136,6 +136,8 @@ function runCryptoAction(action)
         console.log("KYC required.");
         return
     }
+
+    action.handler();
 }
 
 //the main method that delegates the entire program
