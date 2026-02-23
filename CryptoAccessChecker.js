@@ -39,7 +39,7 @@ function enterVerificationUserKYC()
 
     const userName = enterVerificationName();
     const userSurname = enterVerificationSurname();
-    const userAdsress = enterVerificationAdsress();
+    const userAddress = enterVerificationAddress();
 
     return true;
 }
@@ -101,15 +101,15 @@ function checkUserDeposit(userDeposit, minDeposit)
 }
 
 // fun for buy crypto 
-function buyCrypto()
+function buyCrypto(user)
 {}
 
 // fun for sell crypto 
-function sellCrypto()
+function sellCrypto(user)
 {}
 
 // fun for trades Futures crypto 
-function tradesFuturesCrypto()
+function tradesFuturesCrypto(user)
 {}
 
 // for run 
@@ -137,7 +137,14 @@ function runCryptoAction(action)
         return
     }
 
-    action.handler();
+    const user = 
+    {
+        age,
+        deposit,
+        verified: isVerified
+    };
+
+    action.handler(user);
 }
 
 //the main method that delegates the entire program
