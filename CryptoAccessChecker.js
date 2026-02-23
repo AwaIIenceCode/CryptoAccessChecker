@@ -35,11 +35,11 @@ function enterVerificationUserKYC()
 {
     let userKYC = false;
 
-    console.log("\nWelcome the verification page, write your adress, name and surname, please");
+    console.log("\nWelcome the verification page, write your address, name and surname, please");
 
     const userName = enterVerificationName();
     const userSurname = enterVerificationSurname();
-    const userAdress = enterVerificationAdress();
+    const userAdsress = enterVerificationAdsress();
 
     return true;
 }
@@ -73,18 +73,18 @@ function enterVerificationSurname()
     }
 }
 
-// fun for verification user adress
-function enterVerificationAdress() 
+// fun for verification user address
+function enterVerificationAddress() 
 {
-    let userAdress;
+    let userAddress;
 
     while(true)
     {
-        userAdress = String(prompt("\nEnter your adress -> ").toLowerCase());
+        userAddress = String(prompt("\nEnter your address -> ").toLowerCase());
 
-        if (!userAdress.trim()) { console.log("Your adress can`t be empty, try again!"); continue; }
+        if (!userAddress.trim()) { console.log("Your address can`t be empty, try again!"); continue; }
 
-        else { return userAdress; }
+        else { return userAddress; }
     }
 }
 
