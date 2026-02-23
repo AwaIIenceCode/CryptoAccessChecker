@@ -41,7 +41,7 @@ function enterVerificationUserKYC()
     const userSurname = enterVerificationSurname();
     const userAdress = enterVerificationAdress();
 
-    return userKYS = true;
+    return true;
 }
 // fun for verification user name
 function enterVerificationName() 
