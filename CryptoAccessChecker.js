@@ -159,6 +159,8 @@ function main()
     {
         console.log("\n Press \"1\" for use crypto-exchange Press \"2\" for buy crypto\nPress \"3\" for sell crypto\nPress \"4\" for futures trades\nPress \"5\" for exit");
 
+    userChoice = Number(prompt("\nEnter your choice -> "));
+
     if (userChoice === 5) return;
 
     const action = cryptoActions[userChoice];
