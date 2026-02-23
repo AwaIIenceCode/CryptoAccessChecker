@@ -33,7 +33,7 @@ function enterUserDeposit()
 //fun for verification user
 function enterVerificationUserKYC()
 {
-    let userKYS = false;
+    let userKYC = false;
 
     console.log("\nWelcome the verification page, write your adress, name and surname, please");
 
